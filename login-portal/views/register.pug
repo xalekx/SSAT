@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    h4.pb-5
+        | After creating your account please login to view your dashboard.
+    form(method='post')
+        .form-group.row
+            label.col-1.col-form-label.text-right(for='firstname')
+                | First Name
+            .col-4
+                input.form-control#firstname(name='firstName', required='')
+                if errors
+                    label.text-danger=errors.firstName
+            .w-100
+            label.col-1.col-form-label.text-right(for='lastname')
+                | Last Name
+            .col-4
+                input.form-control#lastname(name='lastName', required='')
+                if errors
+                    label.text-danger=errors.lastName
+            .w-100
+            label.col-1.col-form-label.text-right(for='email')
+                | Email address
+            .col-4
+                input.form-control#email(type='email', name='email', required='')
+                if errors
+                    label.text-danger=errors.email
+                    label.text-danger=errors.login
+            .w-100
+            label.col-1.col-form-label.text-right(for='password')
+                | Password
+            .col-4
+                input.form-control#password(name='password', type='password', required='')
+                if errors
+                    label.text-danger=errors.password
+        button(type='submit').btn.btn-primary.offset-1 Register
